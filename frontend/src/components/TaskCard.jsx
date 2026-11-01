@@ -75,7 +75,7 @@ const TaskCard = ({task,index, handleTaskChanged}) => {
           variant='ghost'
           size='icon'
           className={cn(
-            "flex-shrink-0 size-8 rounded-full transition-all duration-200",
+            "flex-shrink-0 size-11 sm:size-8 rounded-full transition-all duration-200",
             task.status === 'complete'
              ? 'text-success hover:text-success/80'
              :"text-muted-foreground hover:text-primary"
@@ -136,11 +136,11 @@ const TaskCard = ({task,index, handleTaskChanged}) => {
         </div>
 
             {/* nút chỉnh và xoá */}
-            <div className="hidden gap-2 group-hover:inline-flex animate-slide-up">
+            <div className="flex gap-2 sm:hidden sm:group-hover:flex animate-slide-up">
               <Button
                 variant='ghost'
                 size='icon'
-                className='flex-shrink-0 transition-colors size-8 text-muted-foreground hover:text-info'
+                className='flex-shrink-0 transition-colors size-11 sm:size-8 text-muted-foreground hover:text-info'
                 onClick={() => {
                   setIsEditing(true);
                   setUpdateTaskTitle(task.title || "");
@@ -153,7 +153,7 @@ const TaskCard = ({task,index, handleTaskChanged}) => {
               <Button
                 variant='ghost'
                 size='icon'
-                className='flex-shrink-0 transition-colors size-8 text-muted-foreground hover:text-destructive'
+                className='flex-shrink-0 transition-colors size-11 sm:size-8 text-muted-foreground hover:text-destructive'
                 onClick={() => deleteTask(task._id)}
               >
                 <Trash2 className='size-4'/>
